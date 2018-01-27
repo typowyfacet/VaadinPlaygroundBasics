@@ -1,6 +1,6 @@
-package repositories;
+package eu.kasprzaksolutions.repositories;
 
-import entities.Customer;
+import eu.kasprzaksolutions.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

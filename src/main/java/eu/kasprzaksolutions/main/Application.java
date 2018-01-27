@@ -1,6 +1,9 @@
-package main;
+package eu.kasprzaksolutions.main;
 
-import entities.Customer;
+import eu.kasprzaksolutions.entities.Customer;
+import eu.kasprzaksolutions.repositories.CustomerRepository;
+import eu.kasprzaksolutions.service.CustomerService;
+import eu.kasprzaksolutions.ui.HelloUi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,19 +13,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import repositories.CustomerRepository;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "repositories")
-@EntityScan(basePackages = "entities")
-@EnableTransactionManagement
+        (scanBasePackages="eu.kasprzaksolutions")
+@EnableJpaRepositories(basePackages = "eu.kasprzaksolutions.repositories")
+@EntityScan(basePackages = "eu.kasprzaksolutions.entities")
 
+@EnableTransactionManagement
 //@ImportResource("classpath:applicationContext.xml")
 public class Application implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
     @Autowired
     private CustomerRepository customerRepository;
+//    @Autowired
+//    private CustomerService customerService;
+//
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

@@ -1,4 +1,4 @@
-package entities;
+package eu.kasprzaksolutions.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
